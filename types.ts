@@ -58,6 +58,7 @@ export type IconProps = {
 
 export type HeaderProps = {
   title?: string;
+  className?: string;
   style?: ViewStyle;
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
@@ -106,7 +107,7 @@ export type TransactionItemProps = {
 export interface InputProps extends TextInputProps {
   icon?: React.ReactNode;
   containerStyle?: ViewStyle;
-  inputStyle?: TextStyle;
+  className?: string;
   inputRef?: React.RefObject<TextInput>;
   //   label?: string;
   //   error?: string;

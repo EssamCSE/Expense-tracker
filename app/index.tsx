@@ -4,11 +4,12 @@ import { Image, StyleSheet, View } from "react-native";
 
 const index = () => {
   const router = useRouter();
-  useEffect(()=>{
-    setTimeout(()=>{
-      router.replace("/welcome")
-    },2000)
-  },[])
+  // useEffect(()=>{
+  //   setTimeout(()=>{
+  //     router.replace("/welcome")
+  //     // router.replace("/(auth)/login")
+  //   },2000)
+  // },[])
 
 
   return (
@@ -23,5 +24,3 @@ const index = () => {
 };
 
 export default index;
-
-const styles = StyleSheet.create({});

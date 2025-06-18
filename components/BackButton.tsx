@@ -1,17 +1,16 @@
-import { useNavigation } from "expo-router";
+import { useNavigation, useRouter } from "expo-router";
 import { CaretLeft } from "phosphor-react-native";
 import React from "react";
 import { TouchableOpacity } from "react-native";
-
-const BackButton = () => {
-  const navigation = useNavigation();
+const BackButton = ({iconSize = 26}:{iconSize?: string | number}) => {
+  const router = useRouter();
   return (
-    <TouchableOpacity onPress={() => navigation.goBack()}>
-        <CaretLeft
-            size={30}
-            color="white"
-            weight="bold"
-        />
+    <TouchableOpacity onPress={() => router.back()}>
+      <CaretLeft
+        size={iconSize}
+        color="white"
+        weight="bold"
+      />
     </TouchableOpacity>
   );
 };

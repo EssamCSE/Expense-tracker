@@ -7,12 +7,17 @@ const Typo = ({
   children,
   size,
   ...props
-}: { className?: string } & any) => {
+}: {
+  className?: string;
+  children: React.ReactNode;
+  size?: number;
+  style?: TextStyle;
+}) => {
   const textStyle: TextStyle = {
     fontSize: size ? verticalScale(size) : verticalScale(18),
   };
   return (
-    <Text style={textStyle} {...props} className={`text-white font-normal ${className}`}>
+    <Text style={[textStyle, props.style]} className={`text-white font-normal ${className}`}>
       {children}
     </Text>
   );

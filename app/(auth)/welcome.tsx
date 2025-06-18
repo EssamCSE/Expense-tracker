@@ -2,7 +2,7 @@ import Button from "@/components/Button";
 import Typo from "@/components/Typo";
 import { useRouter } from "expo-router";
 import React from "react";
-import { StatusBar, TouchableOpacity, View } from "react-native";
+import { StatusBar, Text, TouchableOpacity, View } from "react-native";
 import Animated, { FadeIn, FadeInDown } from "react-native-reanimated";
 import { SafeAreaView } from "react-native-safe-area-context";
 const Welcome = () => {
@@ -74,9 +74,9 @@ const Welcome = () => {
             className="mt-5 w-[80%] mb-5"
           >
             <Button onPress={() => router.push('/(auth)/register')} className="bg-white w-full h-[60px] rounded-full ">
-              <Typo className="font-bold text-neutral-900" size={22}>
-                Get Started
-              </Typo>
+            <Text className="text-xl font-bold">
+              Get Started
+            </Text>
             </Button>
           </Animated.View>
         </View>
