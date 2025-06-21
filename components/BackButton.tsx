@@ -1,4 +1,4 @@
-import { useNavigation, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 import { CaretLeft } from "phosphor-react-native";
 import React from "react";
 import { TouchableOpacity } from "react-native";

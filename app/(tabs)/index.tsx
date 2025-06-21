@@ -1,6 +1,7 @@
 import Button from "@/components/Button";
 import { auth } from "@/config/firebase";
 import { useAuth } from "@/context/authContext";
+import { useRouter } from "expo-router";
 import { signOut } from "firebase/auth";
 import React from "react";
 import { Text } from "react-native";
@@ -8,6 +9,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 const Home = () => {
   const { user } = useAuth();
+  const router = useRouter();
   const handleLogout = async () => {
     await signOut(auth);
   };
