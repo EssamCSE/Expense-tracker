@@ -1,0 +1,321 @@
+import { StyleSheet, Dimensions, Platform } from "react-native";
+
+const { width, height } = Dimensions.get("window");
+
+export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#0a0a0a",
+  },
+  safeArea: {
+    flex: 1,
+  },
+  backgroundContainer: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+  },
+  glowEffect: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: "rgba(163, 230, 53, 0.03)",
+  },
+  particle: {
+    position: "absolute",
+    borderRadius: 50,
+  },
+  particle1: {
+    top: height * 0.15,
+    left: width * 0.1,
+    width: 8,
+    height: 8,
+    backgroundColor: "#a3e635",
+  },
+  particle2: {
+    top: height * 0.3,
+    right: width * 0.15,
+    width: 6,
+    height: 6,
+    backgroundColor: "#3b82f6",
+  },
+  particle3: {
+    bottom: height * 0.25,
+    left: width * 0.2,
+    width: 4,
+    height: 4,
+    backgroundColor: "#8b5cf6",
+  },
+  header: {
+    flexDirection: "row",
+    alignItems: "center",
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    backgroundColor: "rgba(26, 26, 26, 0.95)",
+    borderBottomWidth: 1,
+    borderBottomColor: "#2a2a2a",
+  },
+  headerContent: {
+    flex: 1,
+    alignItems: "center",
+    marginLeft: -40,
+  },
+  headerSpacer: {
+    width: 40,
+  },
+  headerTitle: {
+    fontSize: 18,
+    fontWeight: "700",
+    color: "white",
+    marginBottom: 2,
+  },
+  headerSubtitle: {
+    fontSize: 12,
+    color: "#888",
+    fontWeight: "500",
+  },
+  scrollView: {
+    flex: 1,
+  },
+  scrollContent: {
+    padding: 16,
+  },
+  mainCard: {
+    backgroundColor: "#1a1a1a",
+    borderRadius: 16,
+    padding: 20,
+    borderWidth: 1,
+    borderColor: "#2a2a2a",
+    ...Platform.select({
+      ios: {
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.1,
+        shadowRadius: 8,
+      },
+      android: {
+        elevation: 4,
+      },
+    }),
+  },
+  cardHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 24,
+    paddingBottom: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: "#2a2a2a",
+  },
+  cardIconContainer: {
+    width: 40,
+    height: 40,
+    borderRadius: 12,
+    backgroundColor: "rgba(163, 230, 53, 0.1)",
+    alignItems: "center",
+    justifyContent: "center",
+    marginRight: 12,
+    borderWidth: 1,
+    borderColor: "rgba(163, 230, 53, 0.2)",
+  },
+  cardHeaderText: {
+    flex: 1,
+  },
+  cardTitle: {
+    fontSize: 16,
+    fontWeight: "600",
+    color: "white",
+    marginBottom: 2,
+  },
+  cardSubtitle: {
+    fontSize: 12,
+    color: "#888",
+    fontWeight: "400",
+  },
+  fieldGroup: {
+    marginBottom: 20,
+  },
+  labelRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 8,
+  },
+  fieldLabel: {
+    fontSize: 14,
+    fontWeight: "600",
+    color: "white",
+    marginBottom: 8,
+  },
+  optionalText: {
+    fontSize: 10,
+    color: "#666",
+    marginLeft: 8,
+    textTransform: "uppercase",
+    fontWeight: "500",
+  },
+  dropdownContainer: {
+    position: "relative",
+  },
+  dropdownIcon: {
+    position: "absolute",
+    left: 16,
+    top: 16,
+    zIndex: 1,
+  },
+  dropdownContainerStyle: {
+    backgroundColor: "#1a1a1a",
+    borderWidth: 1,
+    borderColor: "#3a3a3a",
+    borderRadius: 8,
+    marginTop: 2,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 8,
+    maxHeight: 200,
+  },
+  
+  // Individual dropdown option items (smaller padding)
+  itemContainerStyle: {
+    backgroundColor: "transparent",
+    paddingVertical: 1,
+    paddingHorizontal: 12,
+    borderBottomWidth: 0.5,
+    borderBottomColor: "#2a2a2a",
+    minHeight: 40,
+  },
+  
+  // Text style for each option
+  itemTextStyle: {
+    color: "#ffffff",
+    fontSize: 14,
+    fontWeight: "500",
+  },
+  dropdown: {
+    backgroundColor: "#2a2a2a",
+    borderWidth: 1,
+    borderColor: "#3a3a3a",
+    borderRadius: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 16,
+    paddingLeft: 48,
+    minHeight: 48,
+  },
+  placeholderStyle: {
+    color: "#666",
+    fontSize: 14,
+  },
+  selectedTextStyle: {
+    color: "white",
+    fontSize: 14,
+    fontWeight: "500",
+  },
+  inputContainer: {
+    backgroundColor: "#2a2a2a",
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: "#3a3a3a",
+    overflow: "hidden",
+    ...Platform.select({
+      ios: {
+        shadowColor: "#a3e635",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0,
+        shadowRadius: 4,
+      },
+      android: {
+        elevation: 0,
+      },
+    }),
+  },
+  inputWrapper: {
+    position: "relative",
+  },
+  inputIcon: {
+    position: "absolute",
+    left: 16,
+    top: 16,
+    zIndex: 1,
+  },
+  textInput: {
+    color: "white",
+    fontSize: 14,
+    fontWeight: "500",
+    paddingHorizontal: 16,
+    paddingVertical: 16,
+    minHeight: 48,
+  },
+  multilineInput: {
+    minHeight: 80,
+    textAlignVertical: "top",
+  },
+  dateButton: {
+    backgroundColor: "#2a2a2a",
+    borderWidth: 1,
+    borderColor: "#3a3a3a",
+    borderRadius: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 16,
+    flexDirection: "row",
+    alignItems: "center",
+    minHeight: 48,
+  },
+  dateButtonText: {
+    color: "white",
+    fontSize: 14,
+    fontWeight: "500",
+    flex: 1,
+    marginLeft: 12,
+  },
+  buttonContainer: {
+    padding: 16,
+    backgroundColor: "rgba(26, 26, 26, 0.95)",
+    borderTopWidth: 1,
+    borderTopColor: "#2a2a2a",
+  },
+  buttonRow: {
+    flexDirection: "row",
+    gap: 12,
+  },
+  deleteButton: {
+    flex: 1,
+    backgroundColor: "rgba(239, 68, 68, 0.1)",
+    borderWidth: 1,
+    borderColor: "rgba(239, 68, 68, 0.3)",
+    borderRadius: 12,
+    paddingVertical: 16,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 8,
+  },
+  deleteButtonText: {
+    color: "#ef4444",
+    fontSize: 14,
+    fontWeight: "600",
+  },
+  submitButton: {
+    flex: 1,
+    backgroundColor: "rgba(163, 230, 53, 0.1)",
+    borderWidth: 1,
+    borderColor: "rgba(163, 230, 53, 0.3)",
+    borderRadius: 12,
+    paddingVertical: 20,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 8,
+  },
+  submitButtonText: {
+    color: "#a3e635",
+    fontSize: 14,
+    fontWeight: "600",
+  },
+  inputGroup: {
+    marginBottom: 20,
+  },
+});

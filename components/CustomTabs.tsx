@@ -14,7 +14,6 @@ import {
   ChartBar, 
   Wallet, 
   User,
-  Home,
   TrendUp,
   CreditCard,
   UserCircle

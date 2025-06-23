@@ -9,7 +9,7 @@ const Button = ({
 }: CustomButtonProps) => {
   if (loading) {
     <View
-      className={`bg-primary rounded-[17px] h-[52px] justify-center items-center bg-transparent`}
+      className={`bg-primary rounded-[17px] h-[52px] justify-center items-center `}
     >
       {/* Loading */}
     </View>;

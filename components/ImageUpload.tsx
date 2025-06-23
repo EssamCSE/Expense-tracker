@@ -252,7 +252,7 @@ const ImageUpload = ({
             source={getFilePath(file)}
             contentFit="cover"
             transition={400}
-            style={[styles.uploadedImage, imageStyle]}
+            style={[styles.uploadedImage, imageStyle as any]}
           />
         </Animated.View>
 

@@ -1,7 +1,9 @@
 import BackButton from "@/components/BackButton";
+import CustomAlertModal from "@/components/CustomAlertModal";
 import ImageUpload from "@/components/ImageUpload";
 import Input from "@/components/Input";
 import { useAuth } from "@/context/authContext";
+import { useCustomAlert } from "@/hooks/useCustomAlert";
 import { createOrUpdateWallet, deleteWallet } from "@/service/walletService";
 import { WalletType } from "@/types";
 import * as ImagePicker from "expo-image-picker";
@@ -9,13 +11,12 @@ import { useLocalSearchParams, useRouter } from "expo-router";
 import * as Icons from "phosphor-react-native";
 import React, { useEffect, useState } from "react";
 import {
-  Alert,
   Dimensions,
   ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
+  View
 } from "react-native";
 import Animated, {
   SlideInDown,
@@ -63,6 +64,10 @@ const WalletModal = () => {
   const deleteButtonOpacity = useSharedValue(0);
   const deleteButtonRotation = useSharedValue(0);
   const deleteButtonGlow = useSharedValue(0);
+
+  // custom alert hook
+  const { alertState, hideAlert, showError, showSuccess, showConfirmation } =
+    useCustomAlert();
 
   useEffect(() => {
     const startAnimations = () => {
@@ -238,7 +243,7 @@ const WalletModal = () => {
 
     let { name, image } = wallet;
     if (!name.trim()) {
-      Alert.alert("Validation Error", "Please enter a wallet name");
+      showError("Validation Error", "Please enter a wallet name");
       return;
     }
     const data: WalletType = {
@@ -258,13 +263,18 @@ const WalletModal = () => {
 
       if (res.success) {
         updateUserData(user?.uid as string);
-        router.back();
+         showSuccess("Success", res.msg,[
+          {
+            text: "OK",
+            onPress: () => router.back(),
+          },
+        ])
       } else {
-        Alert.alert("Error", res.msg);
-      }
-    } catch (error) {
+        showError("Error", res.msg)
+        
+    } }catch (error) {
       setLoading(false);
-      Alert.alert("Error", "Something went wrong. Please try again.");
+      showError("Error", "Something went wrong. Please try again.");
     }
   };
 
@@ -286,9 +296,12 @@ const WalletModal = () => {
     if (!id) return;
     setLoading(true);
     const res = await deleteWallet(id);
-    setLoading(false);
+    if (res.success) {
+      setLoading(false);
+      router.back();
+    }
     if (!res.success) {
-      Alert.alert("Error", res.msg);
+      showError("Error", res.msg);
     }
   };
 
@@ -307,23 +320,12 @@ const WalletModal = () => {
     );
 
     // Show confirmation alert
-    Alert.alert(
+    showConfirmation(
       "Delete Wallet",
       "Are you sure you want to delete this wallet? This action cannot be undone.",
-      [
-        {
-          text: "Cancel",
-          style: "cancel",
-        },
-        {
-          text: "Delete",
-          style: "destructive",
-          onPress: () => {
-            onDeleteWallet();
-            router.back();
-          },
-        },
-      ]
+      async () => {
+        onDeleteWallet();
+      }
     );
   };
   return (
@@ -489,6 +491,16 @@ const WalletModal = () => {
           </AnimatedTouchableOpacity>
         )}
       </Animated.View>
+
+      <CustomAlertModal
+        visible={alertState.visible}
+        title={alertState.title}
+        message={alertState.message}
+        buttons={alertState.buttons}
+        onClose={hideAlert}
+        type={alertState.type}
+        showIcon={alertState.showIcon}
+      />
     </SafeAreaView>
   );
 };

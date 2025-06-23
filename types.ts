@@ -91,6 +91,8 @@ export type TransactionListType = {
   title?: string;
   loading?: boolean;
   emptyListMessage?: string;
+  onRefresh: () => void;
+  refreshing: boolean;
 };
 
 export type TransactionItemProps = {
