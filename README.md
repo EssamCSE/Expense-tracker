@@ -30,7 +30,7 @@ A modern mobile application built with React Native for tracking personal expens
 
 1. Clone the repository
 ```bash
-git clone [your-repo-link]
+git clone https://github.com/EssamCSE/Expense-tracker.git
 ```
 
 2. Install dependencies
