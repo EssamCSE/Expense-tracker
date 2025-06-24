@@ -1,50 +1,89 @@
-# Welcome to your Expo app 👋
+# 📱 Expense Tracker App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## 🌟 Overview
+A modern mobile application built with React Native for tracking personal expenses and managing finances efficiently. This app helps users monitor their spending habits, manage multiple wallets, and visualize their financial data through statistics.
 
-## Get started
+## ✨ Features
+- 💰 Multiple wallet management
+- 📊 Transaction tracking and categorization
+- 📈 Statistical analysis of expenses
+- 👤 User authentication and profile management
+- 🔍 Search functionality for transactions
+- 📱 Modern and responsive UI
 
-1. Install dependencies
+## 🛠️ Tech Stack
+- React Native
+- Firebase (Authentication & Database)
+- TypeScript
+- TailwindCSS (for styling)
+- Reanimation
+- Expo
 
-   ```bash
-   npm install
-   ```
+## 🚀 Getting Started
 
-2. Start the app
+### Prerequisites
+- Node.js (v20 or higher)
+- npm or yarn
+- Expo CLI
 
-   ```bash
-   npx expo start
-   ```
+### Installation
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+1. Clone the repository
 ```bash
-npm run reset-project
+git clone [your-repo-link]
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Install dependencies
+```bash
+npm install
+```
 
-## Learn more
+3. Configure Firebase
+- Create a Firebase project
+- Add your Firebase configuration in `config/firebase.ts`
 
-To learn more about developing your project with Expo, look at the following resources:
+4. Start the development server
+```bash
+npm start
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 📱 App Structure
 
-## Join the community
+```
+├── app/                  # Main application screens
+│   ├── (auth)/          # Authentication screens
+│   ├── (modals)/        # Modal components
+│   └── (tabs)/          # Tab-based navigation screens
+├── components/          # Reusable components
+├── config/             # Configuration files
+├── constants/          # Constants and theme
+├── context/            # Context providers
+├── hooks/              # Custom hooks
+├── service/            # API and service functions
+└── utils/              # Utility functions
+```
 
-Join our community of developers creating universal apps.
+## 🔐 Authentication
+The app uses Firebase Authentication for user management, supporting:
+- Email/Password login
+- User registration
+- Profile management
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 💾 Data Management
+- Transactions are stored in Firebase
+- Real-time updates for transaction data
+- Secure data access and management
+
+## 🎨 UI/UX Features
+- Custom animated components
+- Responsive design
+- Dark/Light theme support
+- Intuitive navigation
+
+## 📝 Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+
+---
+
+⭐️ If you found this project helpful, please give it a star!
