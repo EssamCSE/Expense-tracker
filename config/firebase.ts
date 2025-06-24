@@ -11,12 +11,12 @@ import { getReactNativePersistence, initializeAuth } from 'firebase/auth';
 import { getFirestore } from "firebase/firestore";
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCyGoeKajV5ZcHRxyIhRJje0iZK53mW-nE",
-  authDomain: "expenses-e85e9.firebaseapp.com",
-  projectId: "expenses-e85e9",
-  storageBucket: "expenses-e85e9.firebasestorage.app",
-  messagingSenderId: "8360970896",
-  appId: "1:8360970896:web:672da31ad36724ed8d2615",
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
 };
 
 // Initialize Firebase

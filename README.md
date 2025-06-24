@@ -77,7 +77,7 @@ The app uses Firebase Authentication for user management, supporting:
 ## 🎨 UI/UX Features
 - Custom animated components
 - Responsive design
-- Dark/Light theme support
+- Dark theme support
 - Intuitive navigation
 
 ## 📝 Contributing
