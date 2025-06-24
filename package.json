@@ -65,7 +65,8 @@
     "doctor": {
       "reactNativeDirectoryCheck": {
         "exclude": [
-          "firebase"
+          "firebase",
+          "react-native-element-dropdown"
         ],
         "listUnknownPackages": false
       }

@@ -24,7 +24,7 @@ const HomeCard = () => {
   // Animation values
   const cardScale = useSharedValue(0.8);
   const cardOpacity = useSharedValue(0);
-  const balanceTranslateY = useSharedValue(20);
+  const balanceTranslateY = useSharedValue(30);
   const balanceOpacity = useSharedValue(0);
   const incomeTranslateX = useSharedValue(-30);
   const incomeOpacity = useSharedValue(0);
@@ -134,12 +134,12 @@ const HomeCard = () => {
       resizeMode="stretch"
       style={[
         {
-          width: 330,
-          height: 200,
+          width: 300,
+          height: 180,
           borderRadius: 10,
           marginHorizontal: "auto",
           alignSelf: "center",
-          marginVertical: 5,
+          marginVertical: 1,
           justifyContent: "center",
           alignItems: "center",
           shadowColor: "#000",
@@ -155,7 +155,7 @@ const HomeCard = () => {
       ]}
     >
       {/* Card Content */}
-      <View style={{ flex: 1, width: "100%", padding: 24 }}>
+      <View style={{ flex: 1, width: "100%", padding: 20 }}>
         {/* Header */}
         <View
           style={{
@@ -168,7 +168,7 @@ const HomeCard = () => {
             style={[
               {
                 color: "black",
-                fontSize: 16,
+                fontSize: 14,
                 fontWeight: "bold",
               },
               balanceAnimatedStyle,
@@ -185,11 +185,11 @@ const HomeCard = () => {
         </View>
 
         {/* Balance Amount */}
-        <Animated.View style={[{ marginTop: 8 }, balanceAnimatedStyle]}>
+        <Animated.View style={[{ marginTop: 1 }, balanceAnimatedStyle]}>
           <Text
             style={{
               color: "black",
-              fontSize: 32,
+              fontSize: 28,
               fontWeight: "bold",
             }}
           >
@@ -203,14 +203,14 @@ const HomeCard = () => {
             flexDirection: "row",
             justifyContent: "space-between",
             alignItems: "center",
-            marginTop: 20,
+            marginTop: 15,
             gap: 8,
           }}
         >
           {/* Income */}
           <Animated.View
             style={[
-              { flexDirection: "row", gap: 8, alignItems: "center" },
+              { flexDirection: "row", gap: 5, alignItems: "center" },
               incomeAnimatedStyle,
             ]}
           >
@@ -221,12 +221,12 @@ const HomeCard = () => {
                 borderRadius: 12,
               }}
             >
-              <Icons.ArrowDown size={18} color="#22c55e" weight="bold" />
+              <Icons.ArrowDown size={15} color="#22c55e" weight="bold" />
             </View>
             <Text
               style={{
                 color: "black",
-                fontSize: 14,
+                fontSize: 12,
                 fontWeight: "600",
               }}
             >
@@ -248,12 +248,12 @@ const HomeCard = () => {
                 borderRadius: 12,
               }}
             >
-              <Icons.ArrowUp size={18} color="#ef4444" weight="bold" />
+              <Icons.ArrowUp size={15} color="#ef4444" weight="bold" />
             </View>
             <Text
               style={{
                 color: "black",
-                fontSize: 14,
+                fontSize: 12,
                 fontWeight: "600",
               }}
             >
@@ -269,7 +269,7 @@ const HomeCard = () => {
               flexDirection: "row",
               justifyContent: "space-between",
               alignItems: "center",
-              marginTop: 4,
+              marginTop: 3,
               marginHorizontal: 8,
             },
             amountAnimatedStyle,
@@ -278,7 +278,7 @@ const HomeCard = () => {
           <Text
             style={{
               color: "#22c55e",
-              fontSize: 16,
+              fontSize: 15,
               fontWeight: "bold",
             }}
           >
@@ -287,11 +287,11 @@ const HomeCard = () => {
           <Text
             style={{
               color: "#ef4444",
-              fontSize: 16,
+              fontSize: 15,
               fontWeight: "bold",
             }}
           >
-            $ {walletLoading ? "..." :getTotals().expenses?.toFixed(2)}
+            -$ {walletLoading ? "..." :getTotals().expenses?.toFixed(2)}
           </Text>
         </Animated.View>
       </View>

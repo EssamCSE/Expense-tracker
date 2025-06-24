@@ -135,7 +135,7 @@ const TransactionModal = () => {
     try {
       const res = await createOrUpdateTransaction(transaction);
       if (res.success) {
-        showSuccess("Success", "Transaction created successfully", [
+        showSuccess("Success", "Transaction updated successfully", [
           {
             text: "OK",
             onPress: () => router.back(),

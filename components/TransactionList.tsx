@@ -83,7 +83,6 @@ const TransictionList = ({
       }),
     ]).start(() => {
       setIsAnimating(false);
-      // TODO: Open Transaction Details in Modal
       router.push({
         pathname: "/(modals)/transactionModal",
         params: {
@@ -98,7 +97,6 @@ const TransictionList = ({
           walletId: item?.walletId,
         },
       });
-      console.log("Transaction clicked:", item, index);
     });
   };
 
@@ -156,9 +154,7 @@ const TransictionList = ({
           <View style={styles.countBadge}>
             <Text style={styles.countText}>{data.length}</Text>
           </View>
-          {/* <TouchableOpacity>
-              <Text style={styles.seeAllText}>See All</Text>
-            </TouchableOpacity> */}
+
         </View>
       </Animated.View>
     );

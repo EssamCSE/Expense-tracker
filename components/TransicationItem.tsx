@@ -233,8 +233,8 @@ const TransactionItem = ({
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 16, 
-    marginVertical: 4, 
+    marginHorizontal: 5, 
+    marginVertical: 5, 
     borderRadius: 12,
     backgroundColor: "#1a1a1a",
     borderWidth: 1,
@@ -259,7 +259,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     paddingHorizontal: 16, 
-    paddingVertical: 14, 
+    paddingVertical: 5, 
     minHeight: 70, 
   },
   iconContainer: {

@@ -184,13 +184,13 @@ const CustomTabs: React.FC<BottomTabBarProps> = ({ state, descriptors, navigatio
               {getTabIcon(route.name, isFocused, isFocused ? '#a3e635' : '#737373')}
             </View>
             
-            {/* <Animated.Text style={[
+            <Animated.Text style={[
               styles.tabLabel, 
               textAnimatedStyle,
               { fontWeight: isFocused ? '600' : '500' }
             ]}>
               {label}
-            </Animated.Text> */}
+            </Animated.Text>
             
             {/* Active dot indicator */}
             {isFocused && (
@@ -244,7 +244,7 @@ const styles = StyleSheet.create({
     borderRadius: 14,
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 2,
+    marginBottom: -5,
   },
   iconText: {
     color: '#000',
